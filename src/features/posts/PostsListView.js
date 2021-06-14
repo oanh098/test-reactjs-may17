@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import fetchPostsAction  from '../../fetchPosts'
+import FetchPostsAction  from '../../api/FetchPosts'
 import { Link } from 'react-router-dom'
 import Pagination from "react-js-pagination"
 import {loadExactPage} from '../../redux/actions'
@@ -37,8 +37,10 @@ class PostsListView extends Component {
      }
 
      componentDidMount() {
-        const {fetchPosts} = this.props
-        fetchPosts()
+        const {FetchPosts} = this.props
+        FetchPosts()
+
+
 
     }
 
@@ -128,7 +130,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
-        fetchPosts: fetchPostsAction,
+        FetchPosts: FetchPostsAction,
         loadExactPage: (data) => dispatch(loadExactPage(data))
      }, dispatch)
 )

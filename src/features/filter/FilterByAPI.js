@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import filterPostsByAPIAction from '../../filterPostsByAPI'
-import fetchPostsAction  from '../../fetchPosts'
+import FetchPostsAction  from '../../api/FetchPosts'
 
 import { bindActionCreators } from 'redux'
 
@@ -49,7 +49,7 @@ class FilterByAPI extends Component {
 
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
-        fetchPosts: fetchPostsAction,
+        FetchPosts: FetchPostsAction,
         filterPostsByAPI: filterPostsByAPIAction
     }, dispatch)
 )

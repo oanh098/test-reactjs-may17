@@ -85,7 +85,6 @@ function typeFetchPostsErrorTransformer(state, action) {
 
 function typeFilterByTitleTransformer(state, action) {
 
-    console.log('filter')
     let newState = Object.assign({}, state)
     let value = action.payload
     let appliedFilters = state.appliedFilters

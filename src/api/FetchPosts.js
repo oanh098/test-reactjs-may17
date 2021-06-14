@@ -1,11 +1,17 @@
 import { fetchPostsPending,
         fetchPostsSuccess,
-        fetchPostsError, loadExactPage } from './redux/actions'
+        fetchPostsError, loadExactPage } from '../redux/actions'
 
- function fetchPosts() {
+
+
+ function FetchPosts() {
     console.log('6 fetch')
+
+
     return dispatch => {
-        dispatch(fetchPostsPending())
+
+
+       dispatch(fetchPostsPending())
 
         fetch('https://api.jikan.moe/v3/search/anime?q=Ghibli&page=3')
         .then(res => res.json())
@@ -14,12 +20,17 @@ import { fetchPostsPending,
             dispatch(fetchPostsSuccess(res.results))
             return res.posts
         })
+
+
         .then(() => {dispatch(loadExactPage(-1))})
 
         .catch(error => { dispatch(fetchPostsError(error)) })
+
+
+
     }
 }
 
-export default fetchPosts
+export default FetchPosts
 
 

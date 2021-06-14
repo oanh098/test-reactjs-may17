@@ -1,8 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { filterByTitle } from '../../redux/actions'
+import { useFetch } from '../../hooks'
+
+
+
 
 function FilterByTitleFunc({ count, dispatch }) {
+
+
   return (
     <div>
       <input type='text' onChange={(e) => dispatch(filterByTitle(e.target.value))} />
